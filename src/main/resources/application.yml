@@ -1,0 +1,44 @@
+server:
+  servlet:
+    context-path: /
+  port:
+    8083
+
+spring:
+  config:
+    import: env.properties
+  application:
+    name: esecustomers
+  datasource:
+    url: jdbc:postgresql://ese-customers-ese-customers.l.aivencloud.com:20915/customers?ssl=require
+    username: avnadmin
+    password: ${POSTGRESQL_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eseeureka:8761/eureka    
+
+openapi:
+  service:
+    title: esecustomers doc
+    version: 1.0.0
+    url: http://eseapigateway:8080
+
+springdoc:
+  api-docs:
+    path: /esecustomers/v3/api-docs
+  swagger-ui:
+    path: /esecustomers/swagger-ui.html
