@@ -26,11 +26,6 @@ spring:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://eseeureka:8761/eureka    
-
 openapi:
   service:
     title: esecustomers doc
