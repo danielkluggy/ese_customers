@@ -11,8 +11,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "cliente")
 public class ClienteModel {
 	@Id
@@ -28,40 +30,4 @@ public class ClienteModel {
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtExclusao;
-
-	public ClienteModel() {
-	}
-
-	public UUID getClienteId() {
-		return clienteId;
-	}
-
-	public void setClienteId(UUID clienteId) {
-		this.clienteId = clienteId;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public Date getDtExclusao() {
-		return dtExclusao;
-	}
-
-	public void setDtExclusao(Date dtExclusao) {
-		this.dtExclusao = dtExclusao;
-	}
-
 }
